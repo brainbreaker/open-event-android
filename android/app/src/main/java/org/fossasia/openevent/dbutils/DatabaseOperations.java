@@ -4,6 +4,8 @@ import android.database.Cursor;
 import android.database.DatabaseUtils;
 import android.database.sqlite.SQLiteDatabase;
 
+import org.fossasia.openevent.OpenEventApp;
+import org.fossasia.openevent.R;
 import org.fossasia.openevent.data.Event;
 import org.fossasia.openevent.data.Session;
 import org.fossasia.openevent.data.Speaker;
@@ -67,7 +69,7 @@ public class DatabaseOperations {
                 if (microlocationId != 0) {
                     microlocation = new Microlocation(microlocationId, getMicroLocationById(microlocationId, mDb).getName());
                 } else {
-                    microlocation = new Microlocation(0, "Not decided yet");
+                    microlocation = new Microlocation(0, OpenEventApp.getAppContext().getString(R.string.session_loc_not_available));
                 }
                 int trackId = cur.getInt(cur.getColumnIndex(DbContract.Sessions.TRACK));
                 Track track = new Track(trackId, getTracksbyTracksId(trackId, mDb).getName());
@@ -117,7 +119,7 @@ public class DatabaseOperations {
             if (microlocationId != 0) {
                 microlocation = new Microlocation(microlocationId, getMicroLocationById(microlocationId, mDb).getName());
             } else {
-                microlocation = new Microlocation(0, "Not decided yet");
+                microlocation = new Microlocation(0, OpenEventApp.getAppContext().getString(R.string.session_loc_not_available));
             }
             int trackId = cursor.getInt(cursor.getColumnIndex(DbContract.Sessions.TRACK));
             Track track = new Track(trackId, getTracksbyTracksId(trackId, mDb).getName());
@@ -392,7 +394,7 @@ public class DatabaseOperations {
                 if (microlocationId != 0) {
                     microlocation = new Microlocation(microlocationId, getMicroLocationById(microlocationId, mDb).getName());
                 } else {
-                    microlocation = new Microlocation(0, "Not decided yet");
+                    microlocation = new Microlocation(0, OpenEventApp.getAppContext().getString(R.string.session_loc_not_available));
                 }
                 int trackId = sessionCursor.getInt(sessionCursor.getColumnIndex(DbContract.Sessions.TRACK));
                 Track track = new Track(trackId, getTracksbyTracksId(trackId, mDb).getName());
@@ -593,7 +595,7 @@ public class DatabaseOperations {
                     if (microlocationId != 0) {
                         microlocation = new Microlocation(microlocationId, getMicroLocationById(microlocationId, mDb).getName());
                     } else {
-                        microlocation = new Microlocation(0, "Not decided yet");
+                        microlocation = new Microlocation(0, OpenEventApp.getAppContext().getString(R.string.session_loc_not_available));
                     }
                     int trackId = sessionTableCursor.getInt(sessionTableCursor.getColumnIndex(DbContract.Sessions.TRACK));
                     Track track = new Track(trackId, getTracksbyTracksId(trackId, mDb).getName());
@@ -759,7 +761,7 @@ public class DatabaseOperations {
                     if (microlocationId != 0) {
                         microlocation = new Microlocation(microlocationId, getMicroLocationById(microlocationId, mDb).getName());
                     } else {
-                        microlocation = new Microlocation(0, "Not decided yet");
+                        microlocation = new Microlocation(0, OpenEventApp.getAppContext().getString(R.string.session_loc_not_available));
                     }                    int trackId = sessionCursor.getInt(sessionCursor.getColumnIndex(DbContract.Sessions.TRACK));
                     Track track = new Track(trackId, getTracksbyTracksId(trackId, mDb).getName());
 
@@ -927,7 +929,7 @@ public class DatabaseOperations {
             if (microlocationId != 0) {
                 microlocation = new Microlocation(microlocationId, getMicroLocationById(microlocationId, mDb).getName());
             } else {
-                microlocation = new Microlocation(0, "Not decided yet");
+                microlocation = new Microlocation(0, OpenEventApp.getAppContext().getString(R.string.session_loc_not_available));
             }
             int trackId = cursor.getInt(cursor.getColumnIndex(DbContract.Sessions.TRACK));
             Track track = new Track(trackId, getTracksbyTracksId(trackId, mDb).getName());
@@ -1032,7 +1034,7 @@ public class DatabaseOperations {
                 if (microlocationId != 0) {
                     microlocation = new Microlocation(microlocationId, getMicroLocationById(microlocationId, mDb).getName());
                 } else {
-                    microlocation = new Microlocation(0, "Not decided yet");
+                    microlocation = new Microlocation(0, OpenEventApp.getAppContext().getString(R.string.session_loc_not_available));
                 }
                 int trackId = sessionCursor.getInt(sessionCursor.getColumnIndex(DbContract.Sessions.TRACK));
                 Track track = new Track(trackId, getTracksbyTracksId(trackId, mDb).getName());
